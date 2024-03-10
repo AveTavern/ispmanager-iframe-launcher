@@ -104,6 +104,7 @@ file.close()
 
 # Addons installation
 install_package = input("Would you like to install integration with Yandex.Metrics Y/N \n")
+python_env = input("Input your Python environment name\n")
 if install_package == "Y":
     import os
     os.chdir("/var/www/")
@@ -116,17 +117,16 @@ if install_package == "Y":
         file.close()
     print("Создан файл yandex-laucnher.py")
     
-    python_env = input("Input your Python environment name\n")
     cmd = python_env+'/bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
     subprocess.run([cmd], shell=True)
 
 # cleaner start
 url = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/main/cleaner.py'
 response = requests.get(url)
-    with open ('/var/www/yandex-integration/cleaner.py', 'w+') as file:
-        file.write(response.text)
-        file.close()
-    print("Создан файл yandex-laucnher.py")
+with open ('/var/www/iframe-launcher-cleaner.py', 'w+') as file:
+    file.write(response.text)
+    file.close()
+print("Создан файл yandex-laucnher.py")
 
-cmd = python_env+'/bin/python3.11 /var/www/yandex-integration/cleaner.py'
-    subprocess.run([cmd], shell=True)
+cmd = python_env+'/bin/python3.11 /var/www/iframe-launcher-cleaner.py'
+subprocess.run([cmd], shell=True)
