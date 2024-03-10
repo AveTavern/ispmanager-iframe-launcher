@@ -1,5 +1,5 @@
 # ispmanager-iframe-launcher
-This launcher helps you install iframe in ispmanager
+This launcher helps you install iframe in ispmanager. Attention, you will need to reboot server during installation
 
 How to start launcher
 1. Go to settings -> software configuration and install Python
