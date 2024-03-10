@@ -4,16 +4,16 @@ cmd = 'pip'+' install'+' requests'
 subprocess.run([cmd], shell=True)
 
 import requests
-url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmgr/main/ispmgr_mod_testframe.xml'
+url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmanager/main/ispmgr_mod_testframe.xml'
 response = requests.get(url)
 with open ('/usr/local/mgr5/etc/xml/ispmgr_mod_testframe.xml', 'w+') as file:
     file.write(response.text)
     file.close()
 print("Создан файл ispmgr_mod_testframe.xml в директории /usr/local/mgr5/etc/xml")
 
-lang_name = input("Choose localisation options\n 1)English\n 2)Russian\n 3)English and Russian")
+file = open('/usr/local/mgr5/etc/xml/ispmgr_mod_testframe.xml', 'a')
+lang_name = input("Choose localisation options\n 1)English\n 2)Russian\n 3)English and Russian\n")
 if lang_name == "1":
-    file = open('/usr/local/mgr5/etc/xml/ispmgr_mod_testframe.xml', 'a')
     file.write('     <lang name="en">\n'
                 '        <messages name="desktop">')
     group_menu_name = input("Input the group menu name in English\n")
@@ -25,7 +25,6 @@ if lang_name == "1":
                 '</lang>\n'
                 '</mgrdata>\n')
 elif lang_name == "2":
-    file = open('/usr/local/mgr5/etc/xml/ispmgr_mod_testframe.xml', 'a')
     file.write('     <lang name="ru">\n'
                 '        <messages name="desktop">')
     group_menu_name = input("Input the group menu name in Russian\n")
@@ -37,7 +36,6 @@ elif lang_name == "2":
                 '</lang>\n'
                 '</mgrdata>\n')
 elif lang_name == "3":
-    file = open('/usr/local/mgr5/etc/xml/ispmgr_mod_testframe.xml', 'a')
     file.write('     <lang name="en">\n'
                 '        <messages name="desktop">')
     group_menu_name = input("Input the group menu name in English\n")
@@ -61,7 +59,6 @@ elif lang_name == "3":
                 '</mgrdata>\n')
 else:
     print("English language is set up as default")
-    file = open('/usr/local/mgr5/etc/xml/ispmgr_mod_testframe.xml', 'a')
     file.write('     <lang name="en">\n'
                 '        <messages name="desktop">')
     group_menu_name = input("Input the group menu name\n")
@@ -74,7 +71,7 @@ else:
                 '</mgrdata>\n')
 file.close()
 
-url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmgr/main/testframe.sh'
+url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmanager/main/testframe.sh'
 response = requests.get(url)
 with open ('/usr/local/mgr5/addon//testframe.sh', 'w+') as file:
     file.write(response.text)
@@ -85,7 +82,7 @@ cmd = 'chmod 755 /usr/local/mgr5/addon/testframe.sh'
 subprocess.run([cmd], shell=True)
 print("Обработчику testframe.sh выданы права для обработчиков плагинов")
 
-url  = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmgr/main/testframe.xml'
+url  = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmanager/main/testframe.xml'
 response = requests.get(url)
 with open ('/usr/local/mgr5/addon/testframe.xml', 'w+') as file:
     file.write(response.text)
@@ -112,7 +109,7 @@ if install_package == "Y":
     os.chdir("/var/www/")
     os.mkdir("yandex-integration")
 
-    url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmgr/main/yandex-launcher.py'
+    url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmanager/main/yandex-launcher.py'
     response = requests.get(url)
     with open ('/usr/local/mgr5/addon/yandex-launcher.sh', 'w+') as file:
         file.write(response.text)
