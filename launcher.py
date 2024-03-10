@@ -116,7 +116,7 @@ if install_package == "Y":
         file.close()
     print("Создан файл yandex-laucnher.py")
     
-    python_env = input("Input your Python environment name")
+    python_env = input("Input your Python environment name\n")
     cmd = ''+python_env+'/bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
     subprocess.run([cmd], shell=True)
 
