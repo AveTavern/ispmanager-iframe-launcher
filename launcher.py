@@ -111,7 +111,7 @@ if install_package == "Y":
 
     url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmanager/main/yandex-launcher.py'
     response = requests.get(url)
-    with open ('/usr/local/mgr5/addon/yandex-launcher.sh', 'w+') as file:
+    with open ('/var/www/yandex-integration/yandex-launcher.py', 'w+') as file:
         file.write(response.text)
         file.close()
     print("Создан файл yandex-laucnher.py")
@@ -120,10 +120,13 @@ if install_package == "Y":
     cmd = ''+python_env+'/bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
     subprocess.run([cmd], shell=True)
 
-reboot_validation = input("You should reboot server. Can we reboot now? Y / N\n")
-if reboot_validation == "Y":
-        print("Reboot confirmed, please wait")
-        cmd = '/usr/local/mgr5/sbin/mgrctl'+' -m'+' ispmgr'+' reboot_confirm'+' sok=ok'
-        subprocess.run([cmd], shell=True)
-else:
-    print("Reboot cancelled")
+# cleaner start
+url = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/main/cleaner.py'
+response = requests.get(url)
+    with open ('/var/www/yandex-integration/cleaner.py', 'w+') as file:
+        file.write(response.text)
+        file.close()
+    print("Создан файл yandex-laucnher.py")
+
+cmd = ''+python_env+'/bin/python3.11 /var/www/yandex-integration/cleaner.py'
+    subprocess.run([cmd], shell=True)
