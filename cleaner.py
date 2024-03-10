@@ -1,3 +1,11 @@
 import os
 ispmanager_user = input("Print user that is used to execute script\n")
 os.remove("/"+ispmanager_user+"/launcher.py")
+
+reboot_validation = input("You should reboot server. Can we reboot now? Y / N\n")
+if reboot_validation == "Y":
+        print("Reboot confirmed, please wait")
+        cmd = '/usr/local/mgr5/sbin/mgrctl'+' -m'+' ispmgr'+' reboot_confirm'+' sok=ok'
+        subprocess.run([cmd], shell=True)
+else:
+    print("Reboot cancelled")
