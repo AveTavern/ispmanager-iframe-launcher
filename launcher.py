@@ -117,7 +117,7 @@ if install_package == "Y":
     print("Создан файл yandex-laucnher.py")
     
     python_env = input("Input your Python environment name\n")
-    cmd = ''+python_env+'/bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
+    cmd = python_env+'/bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
     subprocess.run([cmd], shell=True)
 
 # cleaner start
@@ -128,5 +128,5 @@ response = requests.get(url)
         file.close()
     print("Создан файл yandex-laucnher.py")
 
-cmd = ''+python_env+'/bin/python3.11 /var/www/yandex-integration/cleaner.py'
+cmd = python_env+'/bin/python3.11 /var/www/yandex-integration/cleaner.py'
     subprocess.run([cmd], shell=True)
