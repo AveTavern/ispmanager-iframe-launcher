@@ -102,7 +102,7 @@ file.write('    <roundcubeframe>'+frame_url+'</roundcubeframe>\n'
             '</doc>')
 file.close()
 
-# Addons installation
+# Addons installation (Yandex Metrics)
 install_package = input("Would you like to install integration with Yandex.Metrics Y/N \n")
 python_env = input("Input your Python environment name\n")
 if install_package == "Y":
@@ -116,6 +116,10 @@ if install_package == "Y":
         file.write(response.text)
         file.close()
     print("yandex-laucnher.py file createed in /var/www/yandex-intetgration/yandex-laucnher.py")
+
+    # addon mark installation
+    with open ('/var/www/yandex-integration/deleteme.txt', 'w+') as file:
+        file.write("yandex")
     
     cmd = python_env+'/bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
     subprocess.run([cmd], shell=True)
