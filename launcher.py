@@ -115,7 +115,7 @@ if install_package == "Y":
     with open ('/var/www/yandex-integration/yandex-launcher.py', 'w+') as file:
         file.write(response.text)
         file.close()
-    print("yandex-laucnher.py file createed in /var/www/yandex-intetgration/yandex-laucnher.py")
+    print("yandex-laucnher.py file createed in /var/www/yandex-integration/yandex-laucnher.py")
 
     # addon mark installation
     with open ('/var/www/yandex-integration/deleteme.txt', 'w+') as file:
