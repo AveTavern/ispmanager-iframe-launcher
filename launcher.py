@@ -1,4 +1,4 @@
-# iframe ispmanager kit installation
+# ispmanager iframe installation kit
 import subprocess
 cmd = 'pip'+' install'+' requests'
 subprocess.run([cmd], shell=True)
@@ -9,7 +9,7 @@ response = requests.get(url)
 with open ('/usr/local/mgr5/etc/xml/ispmgr_mod_testframe.xml', 'w+') as file:
     file.write(response.text)
     file.close()
-print("Создан файл ispmgr_mod_testframe.xml в директории /usr/local/mgr5/etc/xml")
+print("ispmgr_mod_testframe.xml file createed in /usr/local/mgr5/etc/xml")
 
 file = open('/usr/local/mgr5/etc/xml/ispmgr_mod_testframe.xml', 'a')
 lang_name = input("Choose localisation options\n 1)English\n 2)Russian\n 3)English and Russian\n")
@@ -76,18 +76,18 @@ response = requests.get(url)
 with open ('/usr/local/mgr5/addon//testframe.sh', 'w+') as file:
     file.write(response.text)
     file.close()
-print("Создан файл testframe.sh в директории /usr/local/mgr5/addon/")
+print("testframe.sh file createed in /usr/local/mgr5/addon/")
 
 cmd = 'chmod 755 /usr/local/mgr5/addon/testframe.sh'
 subprocess.run([cmd], shell=True)
-print("Обработчику testframe.sh выданы права для обработчиков плагинов")
+print("Handler testframe.sh was given rights to plugin handler")
 
 url  = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/main/testframe.xml'
 response = requests.get(url)
 with open ('/usr/local/mgr5/addon/testframe.xml', 'w+') as file:
     file.write(response.text)
     file.close()
-print("Создан файл testframe.xml в директории /usr/local/mgr5/addon/")
+print("testframe.xml file createed in /usr/local/mgr5/addon/")
 
 title_name = input("Input the Tab title\n")
 file = open('/usr/local/mgr5/addon/testframe.xml', 'a')
@@ -115,7 +115,7 @@ if install_package == "Y":
     with open ('/var/www/yandex-integration/yandex-launcher.py', 'w+') as file:
         file.write(response.text)
         file.close()
-    print("Создан файл yandex-laucnher.py")
+    print("yandex-laucnher.py file createed in /var/www/yandex-intetgration/yandex-laucnher.py")
     
     cmd = python_env+'/bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
     subprocess.run([cmd], shell=True)
@@ -126,7 +126,7 @@ response = requests.get(url)
 with open ('/var/www/iframe-launcher-cleaner.py', 'w+') as file:
     file.write(response.text)
     file.close()
-print("Создан файл yandex-laucnher.py")
+print("iframe-laucnher-cleaner.py file createed in /var/www/")
 
 cmd = python_env+'/bin/python3.11 /var/www/iframe-launcher-cleaner.py'
 subprocess.run([cmd], shell=True)
