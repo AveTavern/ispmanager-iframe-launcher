@@ -119,7 +119,7 @@ if install_package == "Y":
 
     # addon mark installation
     with open ('/var/www/yandex-integration/deleteme.txt', 'w+') as file:
-        file.write("yandex")
+        file.write("yandex-addon")
     
     cmd = python_env+'/bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
     subprocess.run([cmd], shell=True)
