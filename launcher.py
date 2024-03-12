@@ -104,7 +104,6 @@ file.close()
 
 # Addons installation (Yandex Metrics)
 install_package = input("Would you like to install integration with Yandex.Metrics Y/N \n")
-python_env = input("Input your Python environment name\n")
 if install_package == "Y":
     import os
     os.chdir("/var/www/")
@@ -121,7 +120,8 @@ if install_package == "Y":
     with open ('/var/www/yandex-integration/deleteme.txt', 'w+') as file:
         file.write("yandex-addon")
     
-    cmd = python_env+'/bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
+    python_env = input("Input your Python environment name\n")
+    cmd = python_env+'//bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
     subprocess.run([cmd], shell=True)
 
 # cleaner start
