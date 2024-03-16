@@ -4,7 +4,7 @@ cmd = 'pip'+' install'+' requests'
 subprocess.run([cmd], shell=True)
 
 import requests
-url = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/main/ispmgr_mod_testframe.xml'
+url = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/Production/ispmgr_mod_testframe.xml'
 response = requests.get(url)
 with open ('/usr/local/mgr5/etc/xml/ispmgr_mod_testframe.xml', 'w+') as file:
     file.write(response.text)
@@ -71,7 +71,7 @@ else:
                 '</mgrdata>\n')
 file.close()
 
-url = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/main/testframe.sh'
+url = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/Production/testframe.sh'
 response = requests.get(url)
 with open ('/usr/local/mgr5/addon//testframe.sh', 'w+') as file:
     file.write(response.text)
@@ -82,7 +82,7 @@ cmd = 'chmod 755 /usr/local/mgr5/addon/testframe.sh'
 subprocess.run([cmd], shell=True)
 print("Handler testframe.sh was given rights to plugin handler")
 
-url  = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/main/testframe.xml'
+url  = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/Production/testframe.xml'
 response = requests.get(url)
 with open ('/usr/local/mgr5/addon/testframe.xml', 'w+') as file:
     file.write(response.text)
@@ -109,7 +109,7 @@ if install_package == "Y":
     os.chdir("/var/www/")
     os.mkdir("yandex-integration")
 
-    url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmanager/main/yandex-launcher.py'
+    url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmanager/Production/yandex-launcher.py'
     response = requests.get(url)
     with open ('/var/www/yandex-integration/yandex-launcher.py', 'w+') as file:
         file.write(response.text)
@@ -125,7 +125,7 @@ if install_package == "Y":
     subprocess.run([cmd], shell=True)
 
 # cleaner start
-url = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/main/cleaner.py'
+url = 'https://raw.githubusercontent.com/AveTavern/ispmanager-iframe-launcher/Production/cleaner.py'
 response = requests.get(url)
 with open ('/var/www/iframe-launcher-cleaner.py', 'w+') as file:
     file.write(response.text)
