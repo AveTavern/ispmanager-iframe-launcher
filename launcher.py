@@ -109,7 +109,7 @@ if install_package == "Y":
     os.chdir("/var/www/")
     os.mkdir("yandex-integration")
 
-    url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmanager/Production/yandex-launcher.py'
+    url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmanager/main/yandex-launcher.py'
     response = requests.get(url)
     with open ('/var/www/yandex-integration/yandex-launcher.py', 'w+') as file:
         file.write(response.text)
