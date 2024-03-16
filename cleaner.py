@@ -4,12 +4,12 @@ import subprocess
 ispmanager_user = input("Print user that is used to execute script\n")
 os.remove("/"+ispmanager_user+"/launcher.py")
 
-if os.path.exists("/var/www/yandex-integration/deleteme.txt"):
-        file = open('/var/www/yandex-integration/deleteme.txt', 'r')
+if os.path.exists("/var/www/deleteme.txt"):
+        file = open('/var/www/deleteme.txt', 'r')
         file = read()
         if file == "yandex-addon":
                 file = close()
-                os.remove("/var/www/yandex-integration/deleteme.txt")
+                os.remove("/var/www/deleteme.txt")
         else:
                 print(file+" idk what is it")
 else:
