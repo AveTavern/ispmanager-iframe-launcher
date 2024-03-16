@@ -106,22 +106,22 @@ file.close()
 install_package = input("Would you like to install integration with Yandex.Metrics Y/N \n")
 python_env = input("Input your Python environment name\n")
 if install_package == "Y":
-    import os
-    os.chdir("/var/www/")
-    os.mkdir("yandex-integration")
+    #import os
+    #os.chdir("/var/www/")
+    #os.mkdir("yandex-integration")
 
     url = 'https://raw.githubusercontent.com/AveTavern/yandex-ispmanager/main/yandex-launcher.py'
     response = requests.get(url)
-    with open ('/var/www/yandex-integration/yandex-launcher.py', 'w+') as file:
+    with open ('/var/www/yandex-launcher.py', 'w+') as file:
         file.write(response.text)
         file.close()
-    print("yandex-laucnher.py file createed in /var/www/yandex-integration/yandex-laucnher.py")
+    print("yandex-laucnher.py file createed in /var/www/yandex-laucnher.py")
 
     # addon mark installation
-    with open ('/var/www/yandex-integration/deleteme.txt', 'w+') as file:
+    with open ('/var/www/deleteme.txt', 'w+') as file:
         file.write("yandex-addon")
     
-    cmd = python_env+'/bin/python3.11 /var/www/yandex-integration/yandex-launcher.py'
+    cmd = python_env+'/bin/python3.11 /var/www/yandex-launcher.py'
     subprocess.run([cmd], shell=True)
 
 # cleaner start
