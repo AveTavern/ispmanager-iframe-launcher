@@ -2,7 +2,8 @@
 installation_confirm = input("WARNING \n --------------------------- \n Files \n"
                             "/usr/local/mgr5/etc/xml/ispmgr_mod_testframe.xml \n" 
                              "/usr/local/mgr5/addon//testframe.sh \n /usr/local/mgr5/addon/testframe.xml \n" 
-                             "will be rewrited. Proceed? \n Y/N")
+                             "--------------------------------------- \n"
+                             "will be rewrited. Proceed? \n Y/N \n")
 if installation_confirm == "Y":
   print("installation confirmed")
   import subprocess
